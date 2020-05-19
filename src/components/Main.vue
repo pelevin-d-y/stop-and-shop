@@ -20,5 +20,6 @@ export default {
   width: 375px;
   margin: auto;
   background: #f5f5f5;
+  border: 1px solid black;
 }
 </style>
