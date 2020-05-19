@@ -9,7 +9,7 @@
     <div class="produce-wrapper">
       <div class="container">
         <ul class="produce-list">
-          <li v-for="(item, index) in items" :key="item.key" :class="classItem(item.key, index)" @click="itemSelect(item.key)">
+          <li v-for="(item) in items" :key="item.key" :class="classItem(item.key)" @click="itemSelect(item.key)">
             <div class="item-wrapper">
               <div class="item-content">
                 <span :style="{ backgroundImage: `url(${require('../assets/images/' + item.icon)})` }" class="item-icon">
@@ -124,6 +124,10 @@ export default {
   height: 32px;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.item-name {
+  white-space: nowrap;
 }
 
 .back {

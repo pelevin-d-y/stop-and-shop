@@ -2,6 +2,7 @@
   <div class="home main">
     <Header />
     <Produce />
+    <Filters />
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 // @ is an alias to /src
 import Header from "@/components/Header";
 import Produce from "@/components/Produce";
+import Filters from "@/components/Filters";
 
 export default {
   name: "Home",
   components: {
     Header,
-    Produce
+    Produce,
+    Filters
   }
 };
 </script>
