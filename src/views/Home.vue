@@ -1,17 +1,26 @@
 <template>
-  <div class="home">
-    <Main />
+  <div class="home main">
+    <Header />
+    <Produce />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Main from "@/components/Main";
+import Header from "@/components/Header";
+import Produce from "@/components/Produce";
 
 export default {
   name: "Home",
   components: {
-    Main
+    Header,
+    Produce
   }
 };
 </script>
+
+<style lang="scss">
+.main {
+  background: #f5f5f5;
+}
+</style>

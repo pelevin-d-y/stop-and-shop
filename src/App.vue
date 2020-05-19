@@ -1,9 +1,6 @@
 <template>
   <div id="app">
     <router-view />
-    <div class="qwe">
-        aksldjaslkdjsakljd
-    </div>
   </div>
 </template>
 
@@ -14,10 +11,6 @@ export default {
 </script>
 
 <style lang="scss">
-.qwe {
-  font-family: Effra;
-}
-
 #app {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -13,3 +13,9 @@ font-weight: normal;
         url("./assets/fonts/Effra-Bold.ttf") format("truetype");
   font-weight: bold;
  }
+
+.container {
+  max-width: 375px;
+  width: 100%;
+  margin: auto;
+}

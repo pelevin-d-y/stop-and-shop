@@ -1,24 +1,26 @@
 <template>
   <header>
-    <div class="header_wrapper">
-      <a href="#" class="menu-btn">
-        <span></span>
-      </a>
-      <div class="header_logo">
-        <img src="../assets/images/Logo.svg" alt="logo" />
-      </div>
-      <div class="header_basket">
-        <div class="header_basket-price">$12.97</div>
-        <div class="header_basket-img">
-          <img src="../assets/images/Cart.svg" alt="basket-img" />
+    <div class="container">
+      <div class="header_wrapper">
+        <a href="#" class="menu-btn">
+          <span></span>
+        </a>
+        <div class="header_logo">
+          <img src="../assets/images/Logo.svg" alt="logo" />
+        </div>
+        <div class="header_basket">
+          <div class="header_basket-price">$12.97</div>
+          <div class="header_basket-img">
+            <img src="../assets/images/Cart.svg" alt="basket-img" />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="header_search">
-      <form class="search" action="/search">
-        <input type="search" placeholder="Search" />
-        <button type="submit" class="search-btn"></button>
-      </form>
+      <div class="header_search">
+        <form class="search" action="/search">
+          <input type="search" placeholder="Search" />
+          <button type="submit" class="search-btn"></button>
+        </form>
+      </div>
     </div>
   </header>
 </template>
