@@ -26,6 +26,10 @@ body {
   padding-left: 25px;
   padding-right: 25px;
 }
+
+img {
+  display: block;
+}
 #nav {
   padding: 30px;
 
