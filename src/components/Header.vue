@@ -16,18 +16,17 @@
     </div>
     <div class="header_search">
       <form class="search" action="/search">
-        <input type="search" placeholder="Поиск" />
+        <input type="search" placeholder="Search" />
         <button type="submit" class="search-btn"></button>
       </form>
     </div>
   </header>
 </template>
 
-
 <script>
 export default {
   name: "Header",
-  components: {}
+  components: {},
 };
 </script>
 
@@ -112,5 +111,35 @@ header {
 .header_basket-price {
   color: white;
   font-weight: 900;
+}
+
+.header_search {
+  border: 2px solid #d9d9d6;
+  border-radius: 10px;
+  .search {
+    position: relative;
+    input {
+      border: none;
+      width: 100%;
+      padding-left: 20px;
+    }
+    button {
+      width: 1%;
+      height: 96%;
+      position: absolute;
+      right: 0;
+      border: none;
+    }
+  }
+  .search:after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: url("../assets/images/Search.svg") center no-repeat;
+  }
 }
 </style>
