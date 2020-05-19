@@ -1,0 +1,15 @@
+@font-face {
+font-family: "Effra";
+src: url("./assets/fonts/Effra.woff2") format("woff2"),
+      url("./assets/fonts/Effra.woff") format("woff"),
+      url("./assets/fonts/Effra.ttf") format("truetype");
+font-weight: normal;
+}
+
+@font-face {
+  font-family: "Effra";
+  src: url("./assets/fonts/Effra-Bold.woff2") format("woff2"),
+        url("./assets/fonts/Effra-Bold.woff") format("woff"),
+        url("./assets/fonts/Effra-Bold.ttf") format("truetype");
+  font-weight: bold;
+ }
