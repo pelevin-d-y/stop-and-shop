@@ -42,5 +42,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.products-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 
+  background-color: #f5f5f5;
+  border-top: solid 1px #d9d9d9;
+  border-bottom: solid 1px #d9d9d9;
+}
 </style>

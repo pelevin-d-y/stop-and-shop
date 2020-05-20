@@ -2,15 +2,11 @@
   <div class="filters">
     <div class="container">
       <ul class="list">
-        <li :class="classItem('all')" key="all" @click="itemSelect('all')">
-          <router-link to="/">
+        <li :class="classItem('all')" key="all" @click="itemSelect('all', 'all')">
             All
-          </router-link>
         <li>
         <li v-for="(product) in getProducts" :class="classItem(product.key)" :key="product.key" @click="itemSelect(product.key, product.name)">
-          <router-link to="/filter">
             {{ product.name }}
-          </router-link>
         </li>
       </ul>
     </div>
@@ -44,13 +40,12 @@ export default {
     ]),
 
     itemSelect(key, name) {
-      // this.activeItem = key
       this.setCurrentFilter(key)
       this.filterProducts(name)
+      this.activeItem = key
     },
 
     classItem(key) {
-      console.log('classItem', this.activeItem, key)
       return this.activeItem === key ? 'item active' : 'item'
     }
   }

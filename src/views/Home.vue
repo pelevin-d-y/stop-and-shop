@@ -4,7 +4,8 @@
     <Header />
     <Produce />
     <Filters />
-    <Products />
+    <Products v-if="isAll" />
+    <FilteredProducts v-else />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import Header from "@/components/Header";
 import Produce from "@/components/Produce";
 import Filters from "@/components/Filters";
 import Products from "@/components/Products";
+import FilteredProducts from "@/components/FilteredProducts";
 
 export default {
   name: "Home",
@@ -21,7 +23,14 @@ export default {
     Header,
     Produce,
     Filters,
-    Products
+    Products,
+    FilteredProducts
+  },
+
+  computed: {
+    isAll() {
+      return this.$store.state.currentFilter === 'all';
+    }
   }
 };
 </script>
