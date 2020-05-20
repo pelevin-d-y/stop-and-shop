@@ -46,9 +46,36 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   background-color: #f5f5f5;
   border-top: solid 1px #d9d9d9;
   border-bottom: solid 1px #d9d9d9;
+}
+
+.search-text {
+  color: #666666;
+  font-family: Effra;
+  font-size: 14px;
+}
+
+.sort {
+  font-size: 16px;
+  color: #f50049;
+  font-family: Effra;
+  font-weight: bold;
+}
+
+.search {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.search-icon {
+  
 }
 </style>
