@@ -25,13 +25,13 @@ menuBtn.addEventListener('click', function (el) {
   // this.classList.toggle('menu-btn_active');
   overlay.classList.add('visible');
   mobileMenu.classList.add('menu_active');
-  close.classList.add('show');
+  close.classList.add('show-cross');
 })
 
 close.addEventListener('click', function () {
   overlay.classList.remove('visible');
   mobileMenu.classList.remove('menu_active');
-  close.classList.remove('show');
+  close.classList.remove('show-cross');
 })
 
 // $('.menu-btn').on('click', function (e) {

@@ -48,7 +48,7 @@ header {
 .cross {
   opacity: 0;
   position: absolute;
-  right: 10px;
+  right: 8px;
   z-index: 0;
   cursor: pointer;
   transition: 0.3s;

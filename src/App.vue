@@ -21,11 +21,6 @@ body {
   margin: 0;
   padding: 0;
 }
-.container {
-  width: 100%;
-  padding-left: 25px;
-  padding-right: 25px;
-}
 
 img {
   display: block;
