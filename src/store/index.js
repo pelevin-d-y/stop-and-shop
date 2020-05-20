@@ -147,7 +147,6 @@ export default new Vuex.Store({
 
     setCurrentFilter(state, name) {
       state.currentFilter = name
-      console.log('state.currentFilter', state.currentFilter )
     }
   },
 
