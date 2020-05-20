@@ -6,7 +6,7 @@
           <div class="product-type__name">
             {{ product.name }}
           </div>
-          <div class="product-type__view">
+          <div class="product-type__view" @click="itemSelect(product.key, product.name)">
             View All
           </div>
         </div>
@@ -22,7 +22,7 @@
 
 <script>
 import Card from '@/components/Card'
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: "Products",
@@ -37,10 +37,22 @@ export default {
   },
 
   methods: {
+    ...mapMutations([
+      'filterProducts',
+      'setCurrentFilter'
+    ]),
+
     getWrapperClass(key) {
       return key === 'Sponsored Produce' ? "product-type__wrapper sponsored" : "product-type__wrapper"
+    },
+
+    itemSelect(key, name) {
+      this.setCurrentFilter(key)
+      this.filterProducts(name)
+      this.activeItem = key
     }
   }
+  
 }
 </script>
 

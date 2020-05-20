@@ -46,7 +46,7 @@ export default {
     },
 
     classItem(key) {
-      return this.activeItem === key ? 'item active' : 'item'
+      return key === this.getFilter ? 'item active' : 'item'
     }
   }
 }
