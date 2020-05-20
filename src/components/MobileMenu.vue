@@ -1,5 +1,9 @@
 <template>
-  <div class="mobile_menu-wrapper" v-bind: mobileMenuOpen="mobileMenuOpen">
+  <div
+    class="mobile_menu-wrapper"
+    :class="{ menu_active: isOpen }"
+    @click="isOpen"
+  >
     <a href="#" class="mobile_menu-backlink">
       <img src="../assets/images/arrow-red.svg" alt="arrow" />
       <div class="backlink-text">
@@ -9,7 +13,6 @@
     <div class="mobile_menu-title">
       Browse Aisles
     </div>
-
     <MobileMenuList />
   </div>
 </template>
@@ -17,12 +20,11 @@
 <script>
 import MobileMenuList from "@/components/MobileMenuList";
 export default {
+  props: ["value"],
   name: "MobileMenu",
-  data() {
-    return {
-      mobileMenuOpen: false,
-    };
-  },
+  data: () => ({
+    isOpen: false,
+  }),
   components: {
     MobileMenuList,
   },

@@ -1,11 +1,19 @@
 <template>
   <header>
     <div class="container">
-      <div class="header_wrapper">
-        <a href="#" class="menu-btn">
+      <div class="header_wrapper" name="fade" mode="out-in">
+        <a
+          href="#"
+          class="menu-btn"
+          @click.prevent="
+            {
+              $emit('click');
+            }
+          "
+        >
           <span></span>
         </a>
-        <div class="cross">
+        <div class="cross" :class="{ visible: isOpen }">
           <div class="cross-img">
             <img src="../assets/images/cross.svg" alt="cross" />
           </div>
@@ -44,6 +52,8 @@ export default {
 header {
   background: white;
   padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .cross {
