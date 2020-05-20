@@ -1,5 +1,6 @@
 <template>
   <div class="home main">
+    <div class="overlay"></div>
     <Header />
     <Produce />
     <Filters />
