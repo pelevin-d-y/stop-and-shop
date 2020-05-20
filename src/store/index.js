@@ -12,7 +12,7 @@ export default new Vuex.Store({
         key: 'Fresh Fruit',
         cards: [
           {
-            name: "Dricoll's Strawberries asdasd ada sda s",
+            name: "Dricoll's Strawberries",
             cost: "$2.99",
             description: '16 oz pkg | $0.25 / oz',
             image: "strawberry.jpg"

@@ -14,8 +14,8 @@
         </div>
       </div>
       <div class="products-wrapper">
-        <div class="card-item" v-for="product in getFilteredProducts" :key="product.name" >
-          <CardFilter />
+        <div class="card-item" v-for="product in getFilteredProducts.cards" :key="product.name" >
+          <CardFilter :card="product"/>
         </div>
       </div>
     </div>
@@ -70,12 +70,22 @@ export default {
 }
 
 .search {
+  position: relative;
+
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  padding-left: 20px;
 }
 
 .search-icon {
-  
+  position: absolute;
+  top: 0px;
+  left: -5px;
+
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../assets/images/Search.svg") center no-repeat;
 }
 </style>
