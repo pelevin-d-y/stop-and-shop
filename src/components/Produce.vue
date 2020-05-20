@@ -3,16 +3,27 @@
     <div class="container">
       <div class="produce-header">
         <a href="#" class="back"></a>
-          Browse Aisles
+        Browse Aisles
       </div>
     </div>
     <div class="produce-wrapper">
       <div class="container">
         <ul class="produce-list">
-          <li v-for="(item) in items" :key="item.key" :class="classItem(item.key)" @click="itemSelect(item.key)">
+          <li
+            v-for="item in items"
+            :key="item.key"
+            :class="classItem(item.key)"
+            @click="itemSelect(item.key)"
+          >
             <div class="item-wrapper">
               <div class="item-content">
-                <span :style="{ backgroundImage: `url(${require('../assets/images/' + item.icon)})` }" class="item-icon">
+                <span
+                  :style="{
+                    backgroundImage: `url(${require('../assets/images/' +
+                      item.icon)})`,
+                  }"
+                  class="item-icon"
+                >
                 </span>
                 <span class="item-name">
                   {{ item.name }}
@@ -32,41 +43,44 @@ export default {
   data: () => ({
     items: [
       {
-        name: 'Organic',
-        icon: 'meat.png',
-        key: 'Organic'
+        name: "Organic",
+        icon: "meat.png",
+        key: "Organic",
       },
       {
-        name: 'Produce',
-        icon: 'produce.png',
-        key: 'Produce'
+        name: "Produce",
+        icon: "produce.png",
+        key: "Produce",
       },
       {
-        name: 'Meat',
-        icon: 'meat.png',
-        key: 'Meat'
-      }
+        name: "Meat",
+        icon: "meat.png",
+        key: "Meat",
+      },
     ],
-    activeItem: '' 
+    activeItem: "",
   }),
 
   mounted() {
-    this.activeItem = this.items[0].key
+    this.activeItem = this.items[0].key;
   },
 
   methods: {
     itemSelect(key) {
-      this.activeItem = key
+      this.activeItem = key;
     },
 
     classItem(key) {
-      return this.activeItem === key ? 'item active' : 'item'
-    }
-  }
-}
+      return this.activeItem === key ? "item active" : "item";
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+.produce {
+  margin-top: 20px;
+}
 .produce-header {
   position: relative;
 
@@ -77,6 +91,7 @@ export default {
   letter-spacing: 0.3px;
   text-align: center;
   color: #ffffff;
+  font-weight: 600;
 }
 
 .item {
@@ -84,7 +99,7 @@ export default {
 }
 
 .item.active .item-wrapper {
-  border-color:#ffffff;
+  border-color: #ffffff;
 }
 
 .item-wrapper {
@@ -102,14 +117,14 @@ export default {
   display: flex;
   flex-flow: row nowrap;
 
-  background: url('../assets/images/produce-bg.jpg') no-repeat center/cover;
+  background: url("../assets/images/produce-bg.jpg") no-repeat center/cover;
 }
 
 .item-content {
   position: relative;
   padding: 13px 20px 13px 50px;
   border-radius: 22px;
-  
+
   cursor: pointer;
   background-color: #ffffff;
 }
@@ -118,7 +133,7 @@ export default {
   position: absolute;
   left: 9px;
   top: 6px;
-  
+
   display: block;
   width: 32px;
   height: 32px;
@@ -128,6 +143,7 @@ export default {
 
 .item-name {
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .back {
@@ -138,6 +154,6 @@ export default {
   display: block;
   width: 8px;
   height: 14px;
-  background: url('../assets/images/back-icon.svg') no-repeat center/contain;
+  background: url("../assets/images/back-icon.svg") no-repeat center/contain;
 }
 </style>

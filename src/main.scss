@@ -38,7 +38,13 @@ body {
 img {
   display: block;
 }
+a {
+  text-decoration: none;
+}
 
+input {
+  outline: none;
+}
 .container {
   position: relative;
   max-width: 375px;

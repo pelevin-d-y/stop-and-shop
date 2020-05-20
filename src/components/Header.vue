@@ -133,6 +133,7 @@ header {
 }
 
 .header_search {
+  margin-top: 10px;
   .search {
     position: relative;
     input {
@@ -156,7 +157,7 @@ header {
   }
   .search:after {
     position: absolute;
-    top: 15px;
+    top: 14px;
     left: 8px;
     display: block;
     content: "";
