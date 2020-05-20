@@ -2,8 +2,15 @@
   <div class="filters">
     <div class="container">
       <ul class="list">
-        <li v-for="(filter) in filters" :class="classItem(filter.key)" :key="filter.key" @click="itemSelect(filter.key)">
-          {{ filter.name }}
+        <li :class="classItem('all')" key="all" @click="itemSelect('all')">
+          <router-link to="/">
+            All
+          </router-link>
+        <li>
+        <li v-for="(product) in getProducts" :class="classItem(product.key)" :key="product.key" @click="itemSelect(product.key, product.name)">
+          <router-link to="/filter">
+            {{ product.name }}
+          </router-link>
         </li>
       </ul>
     </div>
@@ -11,44 +18,39 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   name: "Filters",
   data: () => ({
-    filters: [
-      {
-        name: 'Fresh Fruit',
-        key: 'Fresh Fruit'
-      },
-      {
-        name: 'Fresh Vegetables',
-        key: 'Fresh Vegetables'
-      },
-      {
-        name: 'Sponsored Produce',
-        key: 'Sponsored'
-      },
-      {
-        name: 'Fresh Herbs',
-        key: 'Fresh Herbs'
-      },
-      {
-        name: 'Fresh Juice & Juice Blends',
-        key: 'Fresh Juice & Juice Blends'
-      },
-    ],
     activeItem: '' 
   }),
 
+  computed: {
+    ...mapGetters([
+      'getProducts',
+      'getFilter'
+    ])
+  },
+
   mounted() {
-    this.activeItem = this.filters[0].key
+    this.activeItem = this.getFilter
   },
 
   methods: {
-    itemSelect(key) {
-      this.activeItem = key
+    ...mapMutations([
+      'filterProducts',
+      'setCurrentFilter'
+    ]),
+
+    itemSelect(key, name) {
+      // this.activeItem = key
+      this.setCurrentFilter(key)
+      this.filterProducts(name)
     },
 
     classItem(key) {
+      console.log('classItem', this.activeItem, key)
       return this.activeItem === key ? 'item active' : 'item'
     }
   }
@@ -91,8 +93,17 @@ export default {
   }
 }
 
+.item a {
+  color: #001919;
+  text-decoration: none;
+}
+
 .item.active {
   border-color: #e0004d;
+  color: #e0004d;
+}
+
+.item.active a {
   color: #e0004d;
 }
 </style>
