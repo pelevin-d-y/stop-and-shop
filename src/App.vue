@@ -30,6 +30,16 @@ body {
 img {
   display: block;
 }
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
 #nav {
   padding: 30px;
 

@@ -5,6 +5,11 @@
         <a href="#" class="menu-btn">
           <span></span>
         </a>
+        <div class="cross">
+          <div class="cross-img">
+            <img src="../assets/images/cross.svg" alt="cross" />
+          </div>
+        </div>
         <div class="header_logo">
           <img src="../assets/images/Logo.svg" alt="logo" />
         </div>
@@ -18,25 +23,35 @@
       <div class="header_search">
         <form class="search" action="/search">
           <input type="search" placeholder="Search" />
-          <button type="submit" class="search-btn"></button>
         </form>
       </div>
+      <MobileMenu />
     </div>
   </header>
 </template>
 
 <script>
+import MobileMenu from "@/components/MobileMenu";
 export default {
   name: "Header",
-  components: {},
+  components: {
+    MobileMenu,
+  },
 };
 </script>
 
 <style lang="scss">
 header {
-  padding-left: 25px;
-  padding-right: 25px;
   background: white;
+}
+
+.cross {
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  z-index: 0;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .menu-btn {
   position: relative;
@@ -49,6 +64,7 @@ header {
 }
 
 .menu_active {
+  opacity: 1;
   transform: translateX(0%) !important;
 }
 
@@ -108,6 +124,7 @@ header {
   border-radius: 10px;
   padding-left: 3px;
   padding-right: 5px;
+  cursor: pointer;
 }
 
 .header_basket-price {
@@ -116,31 +133,35 @@ header {
 }
 
 .header_search {
-  border: 2px solid #d9d9d6;
-  border-radius: 10px;
   .search {
     position: relative;
     input {
-      border: none;
+      border-radius: 10px;
+      border: solid 2px #d9d9d6;
+      background-color: #f4f4f4;
+      box-sizing: border-box;
       width: 100%;
-      padding-left: 20px;
-    }
-    button {
-      width: 1%;
-      height: 96%;
-      position: absolute;
-      right: 0;
-      border: none;
+      padding-left: 34px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-family: Effra;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.36;
+      letter-spacing: normal;
+      color: #001919;
     }
   }
   .search:after {
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 15px;
+    left: 8px;
     display: block;
     content: "";
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     background: url("../assets/images/Search.svg") center no-repeat;
   }
 }

@@ -1,5 +1,6 @@
 <template>
   <div class="home main">
+    <div class="overlay"></div>
     <Header />
     <Produce />
   </div>
@@ -14,8 +15,8 @@ export default {
   name: "Home",
   components: {
     Header,
-    Produce
-  }
+    Produce,
+  },
 };
 </script>
 
