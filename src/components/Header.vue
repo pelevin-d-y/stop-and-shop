@@ -43,6 +43,7 @@ export default {
 <style lang="scss">
 header {
   background: white;
+  padding-bottom: 20px;
 }
 
 .cross {

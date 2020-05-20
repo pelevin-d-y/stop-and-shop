@@ -78,9 +78,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.produce {
-  margin-top: 20px;
-}
 .produce-header {
   position: relative;
 
