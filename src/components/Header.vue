@@ -66,8 +66,8 @@ header {
 }
 .cross {
   opacity: 0;
-  position: fixed;
-  right: 37%;
+  position: absolute;
+  right: -14px;
   z-index: 0;
   cursor: pointer;
   transition: 0.3s;
@@ -128,6 +128,7 @@ header {
 }
 
 .header_wrapper {
+  position: relative;
   display: flex;
   align-items: center;
 }

@@ -1,5 +1,8 @@
 <template>
-  <div class="mobile_menu-wrapper" :class="{ menu_active: isOpen }">
+  <div class="mobile_menu-wrapper" 
+    v-body-scroll-lock="isOpen"
+   :class="{ menu_active: isOpen }"
+  >
     <a href="#" class="mobile_menu-backlink">
       <img src="../assets/images/arrow-red.svg" alt="arrow" />
       <div class="backlink-text">Back to Main Menu</div>
