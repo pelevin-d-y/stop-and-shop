@@ -1,18 +1,41 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home main">
+    <Header />
+    <Produce />
+    <Filters />
+    <Products v-if="isAll" />
+    <FilteredProducts v-else />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Header from "@/components/Header";
+import Produce from "@/components/Produce";
+import Filters from "@/components/Filters";
+import Products from "@/components/Products";
+import FilteredProducts from "@/components/FilteredProducts";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
+    Header,
+    Produce,
+    Filters,
+    Products,
+    FilteredProducts
+  },
+
+  computed: {
+    isAll() {
+      return this.$store.state.currentFilter === "all";
+    }
   }
-}
+};
 </script>
+
+<style lang="scss">
+.main {
+  background: #f5f5f5;
+}
+</style>
