@@ -1,6 +1,5 @@
 <template>
   <div class="home main">
-    <div class="overlay" :class="{ visible: isOpen }"></div>
     <Header />
     <Produce />
     <Filters />
@@ -24,14 +23,14 @@ export default {
     Produce,
     Filters,
     Products,
-    FilteredProducts,
+    FilteredProducts
   },
 
   computed: {
     isAll() {
       return this.$store.state.currentFilter === "all";
-    },
-  },
+    }
+  }
 };
 </script>
 

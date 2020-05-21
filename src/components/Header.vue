@@ -1,19 +1,16 @@
 <template>
   <header>
     <div class="container">
-      <div class="header_wrapper" name="fade" mode="out-in">
-        <a
-          href="#"
-          class="menu-btn"
-          @click.prevent="
-            {
-              $emit('click');
-            }
-          "
-        >
+      <div :class="{ visible: isOpen, overlay: true}">
+        <div class="dialog">
+          <MobileMenu :isOpen="isOpen" />
+        </div>
+      </div>
+      <div class="header_wrapper">
+        <a href="#" class="menu-btn" @click.prevent="isOpen = !isOpen">
           <span></span>
         </a>
-        <div class="cross" :class="{ visible: isOpen }">
+        <div @click="isOpen = !isOpen" :class="{ visible: isOpen, cross: true}">
           <div class="cross-img">
             <img src="../assets/images/cross.svg" alt="cross" />
           </div>
@@ -33,7 +30,6 @@
           <input type="search" placeholder="Search" />
         </form>
       </div>
-      <MobileMenu />
     </div>
   </header>
 </template>
@@ -41,10 +37,13 @@
 <script>
 import MobileMenu from "@/components/MobileMenu";
 export default {
+  data: () => ({
+    isOpen: false
+  }),
   name: "Header",
   components: {
-    MobileMenu,
-  },
+    MobileMenu
+  }
 };
 </script>
 
@@ -55,11 +54,20 @@ header {
   padding-left: 20px;
   padding-right: 20px;
 }
-
+.dialog {
+  position: relative;
+  max-width: 375px;
+  height: 100%;
+  margin: 0 auto;
+  width: auto;
+  top: 0%;
+  left: 0%;
+  transform: translate(0, 0);
+}
 .cross {
   opacity: 0;
-  position: absolute;
-  right: 8px;
+  position: fixed;
+  right: 37%;
   z-index: 0;
   cursor: pointer;
   transition: 0.3s;
@@ -69,7 +77,7 @@ header {
   left: -14px;
   cursor: pointer;
   display: block;
-  z-index: 1;
+  z-index: 0;
   width: 50px;
   height: 50px;
 }

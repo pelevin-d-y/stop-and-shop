@@ -31,6 +31,7 @@
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -39,6 +40,7 @@ body {
 img {
   display: block;
 }
+
 a {
   text-decoration: none;
 }
@@ -46,6 +48,7 @@ a {
 input {
   outline: none;
 }
+
 .container {
   position: relative;
   max-width: 375px;
@@ -61,6 +64,11 @@ input {
   height: 100%;
   top: 0;
   left: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
   background-color: rgba(51, 51, 51, 0.8);
   z-index: 10;
   transition: all 0.3s ease-in-out;
@@ -76,6 +84,7 @@ input {
   opacity: 1;
   z-index: 1;
 }
+
 .show {
   width: 100%;
   margin: auto;

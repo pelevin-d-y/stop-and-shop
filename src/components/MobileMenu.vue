@@ -1,18 +1,10 @@
 <template>
-  <div
-    class="mobile_menu-wrapper"
-    :class="{ menu_active: isOpen }"
-    @click="isOpen"
-  >
+  <div class="mobile_menu-wrapper" :class="{ menu_active: isOpen }">
     <a href="#" class="mobile_menu-backlink">
       <img src="../assets/images/arrow-red.svg" alt="arrow" />
-      <div class="backlink-text">
-        Back to Main Menu
-      </div>
+      <div class="backlink-text">Back to Main Menu</div>
     </a>
-    <div class="mobile_menu-title">
-      Browse Aisles
-    </div>
+    <div class="mobile_menu-title">Browse Aisles</div>
     <MobileMenuList />
   </div>
 </template>
@@ -20,14 +12,16 @@
 <script>
 import MobileMenuList from "@/components/MobileMenuList";
 export default {
-  props: ["value"],
-  name: "MobileMenu",
-  data: () => ({
-    isOpen: false,
-  }),
-  components: {
-    MobileMenuList,
+  props: {
+    isOpen: Boolean
   },
+  mounted() {
+    console.log(this.isOpen);
+  },
+  name: "MobileMenu",
+  components: {
+    MobileMenuList
+  }
 };
 </script>
 
@@ -38,7 +32,7 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1;
+  z-index: 10;
   background: white;
   transform: translateX(-100%);
   transition: all 0.3s ease-in-out;
