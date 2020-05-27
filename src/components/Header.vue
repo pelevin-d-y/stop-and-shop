@@ -1,16 +1,16 @@
 <template>
   <header>
     <div class="container">
-      <div :class="{ visible: isOpen, overlay: true}">
+      <div :class="{ visible: isOpen, overlay: true}" ref="overlay" @click="overlayClick">
         <div class="dialog">
-          <MobileMenu :isOpen="isOpen" />
+          <MobileMenu :isOpen="isOpen" :menuHandler="menuHandler" />
         </div>
       </div>
       <div class="header_wrapper">
-        <a href="#" class="menu-btn" @click.prevent="isOpen = !isOpen">
+        <a href="#" class="menu-btn" @click.prevent="menuHandler">
           <span></span>
         </a>
-        <div @click="isOpen = !isOpen" :class="{ visible: isOpen, cross: true}">
+        <div @click="menuHandler" :class="{ visible: isOpen, cross: true}">
           <div class="cross-img">
             <img src="../assets/images/cross.svg" alt="cross" />
           </div>
@@ -37,12 +37,26 @@
 <script>
 import MobileMenu from "@/components/MobileMenu";
 export default {
+  name: "Header",
+
   data: () => ({
     isOpen: false
   }),
-  name: "Header",
+
   components: {
     MobileMenu
+  },
+
+  methods: {
+    menuHandler() {
+      this.isOpen = !this.isOpen
+    },
+
+    overlayClick(evt) {
+      if (evt.target === this.$refs.overlay) {
+        this.menuHandler()
+      }
+    }
   }
 };
 </script>
@@ -56,10 +70,7 @@ header {
 }
 .dialog {
   position: relative;
-  max-width: 768px;
-  height: 100%;
   margin: 0 auto;
-  width: auto;
   top: 0%;
   left: 0%;
   transform: translate(0, 0);
