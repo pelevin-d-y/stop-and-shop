@@ -1,9 +1,6 @@
 <template>
-  <div class="mobile_menu-wrapper" 
-    v-body-scroll-lock="isOpen"
-   :class="{ menu_active: isOpen }"
-  >
-    <a href="#" class="mobile_menu-backlink">
+  <div class="mobile_menu-wrapper" :class="{ menu_active: isOpen }">
+    <a href="#" class="mobile_menu-backlink" @click.prevent="menuHandler">
       <img src="../assets/images/arrow-red.svg" alt="arrow" />
       <div class="backlink-text">Back to Main Menu</div>
     </a>
@@ -16,10 +13,8 @@
 import MobileMenuList from "@/components/MobileMenuList";
 export default {
   props: {
-    isOpen: Boolean
-  },
-  mounted() {
-    console.log(this.isOpen);
+    isOpen: Boolean,
+    menuHandler: Function
   },
   name: "MobileMenu",
   components: {

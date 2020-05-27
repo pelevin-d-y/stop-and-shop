@@ -3,7 +3,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-1.svg" alt="dish" />
+          <img src="../assets/images/dish-1.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Meal Solutions & Kits</div>
       </li>
@@ -11,7 +11,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-2.svg" alt="dish" />
+          <img src="../assets/images/dish-2.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Produce</div>
       </li>
@@ -19,7 +19,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-3.svg" alt="dish" />
+          <img src="../assets/images/dish-3.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Meat</div>
       </li>
@@ -27,7 +27,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-4.svg" alt="dish" />
+          <img src="../assets/images/dish-4.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Seafood</div>
       </li>
@@ -35,7 +35,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-5.svg" alt="dish" />
+          <img src="../assets/images/dish-5.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Deli</div>
       </li>
@@ -43,7 +43,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-6.svg" alt="dish" />
+          <img src="../assets/images/dish-6.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Dairy</div>
       </li>
@@ -51,7 +51,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-7.svg" alt="dish" />
+          <img src="../assets/images/dish-7.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Beverages</div>
       </li>
@@ -59,7 +59,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-8.svg" alt="dish" />
+          <img src="../assets/images/dish-8.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Bread & Bakery</div>
       </li>
@@ -67,7 +67,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-9.svg" alt="dish" />
+          <img src="../assets/images/dish-9.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Frozen</div>
       </li>
@@ -75,7 +75,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-10.svg" alt="dish" />
+          <img src="../assets/images/dish-10.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Rice, Grains, Pasta, & Beans</div>
       </li>
@@ -83,7 +83,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-11.svg" alt="dish" />
+          <img src="../assets/images/dish-11.jpg" alt="dish" />
         </div>
         <div class="dish_item-text">Baking & Cooking Needs</div>
       </li>
@@ -94,7 +94,7 @@
 <script>
 export default {
   name: "MobileMenuList",
-  components: {},
+  components: {}
 };
 </script>
 
