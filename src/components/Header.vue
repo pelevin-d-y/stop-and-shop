@@ -56,7 +56,7 @@ header {
 }
 .dialog {
   position: relative;
-  max-width: 375px;
+  max-width: 768px;
   height: 100%;
   margin: 0 auto;
   width: auto;
