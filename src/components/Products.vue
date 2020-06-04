@@ -1,7 +1,7 @@
 <template>
   <div class="products">
     <div class="container">
-      <div :class="getWrapperClass(product.key)" v-for="product in getProducts" :key="product.key">
+      <div :class="getWrapperClass(product.key)" v-for="product in getCurrentProducts" :key="product.key">
         <div class="product-type__header">
           <div class="product-type__name">
             {{ product.name }}
@@ -32,7 +32,8 @@ export default {
 
   computed: {
     ...mapGetters([
-      'getProducts'
+      'getCurrentProducts',
+      'getTopFilter'
     ])
   },
 
@@ -47,8 +48,10 @@ export default {
     },
 
     itemSelect(key, name) {
+      const topFilter = this.getTopFilter
+
       this.setCurrentFilter(key)
-      this.filterProducts(name)
+      this.filterProducts({name, topFilter})
       this.activeItem = key
     }
   }

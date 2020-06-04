@@ -38,36 +38,47 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   name: "Produce",
   data: () => ({
     items: [
       {
-        name: "Organic",
-        icon: "meat.png",
-        key: "Organic",
-      },
-      {
         name: "Produce",
         icon: "produce.png",
-        key: "Produce",
+        key: "produce",
       },
       {
         name: "Meat",
         icon: "meat.png",
-        key: "Meat",
+        key: "meat",
       },
     ],
     activeItem: "",
   }),
+
+  computed: {
+    ...mapGetters([
+      'getCurrentProducts',
+      'getTopFilter',
+    ])
+  },
 
   mounted() {
     this.activeItem = this.items[0].key;
   },
 
   methods: {
+     ...mapMutations([
+      'setCurrentFilter',
+      'setCurrentTopFilter'
+    ]),
+
     itemSelect(key) {
       this.activeItem = key;
+      this.setCurrentTopFilter(key);
+      this.setCurrentFilter('all');
     },
 
     classItem(key) {

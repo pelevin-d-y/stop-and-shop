@@ -5,7 +5,7 @@
         <li :class="classItem('all')" key="all" @click="itemSelect('all', 'all')">
             All
         <li>
-        <li v-for="(product) in getProducts" :class="classItem(product.key)" :key="product.key" @click="itemSelect(product.key, product.name)">
+        <li v-for="(product) in getCurrentProducts" :class="classItem(product.key)" :key="product.key" @click="itemSelect(product.key, product.name)">
             {{ product.name }}
         </li>
       </ul>
@@ -24,8 +24,9 @@ export default {
 
   computed: {
     ...mapGetters([
-      'getProducts',
-      'getFilter'
+      'getCurrentProducts',
+      'getTopFilter',
+      'getFilter',
     ])
   },
 
@@ -40,8 +41,9 @@ export default {
     ]),
 
     itemSelect(key, name) {
+      const topFilter = this.getTopFilter
       this.setCurrentFilter(key)
-      this.filterProducts(name)
+      this.filterProducts({name, topFilter})
       this.activeItem = key
     },
 
