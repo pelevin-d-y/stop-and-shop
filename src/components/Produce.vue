@@ -8,9 +8,9 @@
     </div>
     <div class="produce-wrapper">
       <div class="container">
-        <ul class="produce-list">
+        <ul class="produce-list" :style="getProduceBackground()">
           <li
-            v-for="item in items"
+            v-for="item in getAllProductsInfo"
             :key="item.key"
             :class="classItem(item.key)"
             @click="itemSelect(item.key)"
@@ -62,6 +62,7 @@ export default {
     ...mapGetters([
       'getCurrentProducts',
       'getTopFilter',
+      'getAllProductsInfo'
     ])
   },
 
@@ -79,6 +80,14 @@ export default {
       this.activeItem = key;
       this.setCurrentTopFilter(key);
       this.setCurrentFilter('all');
+    },
+
+    getProduceBackground() {
+      const currentProduct = this.getAllProductsInfo.find(product => product.key === this.getTopFilter)
+      return {
+        backgroundImage: `url(${require('../assets/images/' +
+          currentProduct.background)})`,
+      }
     },
 
     classItem(key) {
@@ -125,7 +134,9 @@ export default {
   display: flex;
   flex-flow: row nowrap;
 
-  background: url("../assets/images/produce-bg.jpg") no-repeat center/cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .item-content {

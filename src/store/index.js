@@ -14,7 +14,8 @@ export default new Vuex.Store({
   },
 
   getters: {
-    getCurrentProducts: (state, getters) => state.products[getters.getTopFilter],
+    getAllProductsInfo: (state) => Object.keys(state.products).map(product => state.products[product].__info),
+    getCurrentProducts: (state, getters) => state.products[getters.getTopFilter].data,
     getFilteredProducts: (state) => state.filteredProducts,
     getFilter: (state) => state.currentFilter,
     getTopFilter: (state) => state.currentTopFilter
@@ -23,7 +24,7 @@ export default new Vuex.Store({
 
   mutations: {
     filterProducts(state, {name, topFilter}) {
-      const filteredProducts = state.products[topFilter].find(product => product.name === name)
+      const filteredProducts = state.products[topFilter].data.find(product => product.name === name)
       state.filteredProducts = filteredProducts
     },
 
