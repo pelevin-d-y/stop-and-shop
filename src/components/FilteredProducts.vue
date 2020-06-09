@@ -6,7 +6,7 @@
           <div class="search-icon">
           </div>
           <div class="search-text">
-            Search <span>(149)</span>
+            Search <span>({{getFilteredProducts.cards.length}})</span>
           </div>
         </div>
         <div class="sort">
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="products-wrapper">
-        <div class="card-item" v-for="product in getFilteredProducts.cards" :key="product.name" >
+        <div class="card-item" v-for="(product, index) in getFilteredProducts.cards" :key="product.name + index" >
           <CardFilter :card="product"/>
         </div>
       </div>
