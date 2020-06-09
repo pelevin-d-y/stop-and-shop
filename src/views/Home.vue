@@ -1,7 +1,7 @@
 <template>
   <div class="home main">
     <Header />
-    <Produce />
+    <Categories />
     <Filters />
     <Products v-if="isAll" />
     <FilteredProducts v-else />
@@ -11,7 +11,7 @@
 <script>
 // @ is an alias to /src
 import Header from "@/components/Header";
-import Produce from "@/components/Produce";
+import Categories from "@/components/Categories";
 import Filters from "@/components/Filters";
 import Products from "@/components/Products";
 import FilteredProducts from "@/components/FilteredProducts";
@@ -20,7 +20,7 @@ export default {
   name: "Home",
   components: {
     Header,
-    Produce,
+    Categories,
     Filters,
     Products,
     FilteredProducts
