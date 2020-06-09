@@ -27,7 +27,7 @@
     <a href="#">
       <li class="dish_item">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-4.jpg" alt="dish" />
+          <img src="../assets/images/seafood.png" alt="dish" />
         </div>
         <div class="dish_item-text">Seafood</div>
       </li>

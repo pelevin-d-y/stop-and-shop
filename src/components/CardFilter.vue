@@ -67,6 +67,8 @@ export default {
 .cost {
   font-size: 26px;
   text-align: center;
+  font-family: "Effra";
+  font-weight: bold;
   color: #001919;
 }
 

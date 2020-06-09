@@ -54,6 +54,51 @@ export default {
         icon: "meat.png",
         key: "meat",
       },
+      {
+        name: "Seafood",
+        icon: "seafood.png",
+        key: "Seafood",
+      },
+      {
+        name: "Meal Kits",
+        icon: "dish-1.jpg",
+        key: "Meal Kits",
+      },
+      {
+        name: "Deli",
+        icon: "dish-5.jpg",
+        key: "Deli",
+      },
+      {
+        name: "Dairy",
+        icon: "dish-6.jpg",
+        key: "Dairy",
+      },
+      {
+        name: "Beverages",
+        icon: "dish-7.jpg",
+        key: "Beverages",
+      },
+      {
+        name: "Bread & Bakery",
+        icon: "dish-8.jpg",
+        key: "Bread & Bakery",
+      },
+      {
+        name: "Frozen",
+        icon: "dish-9.jpg",
+        key: "Frozen",
+      },
+      {
+        name: "Rice, Grain, Pasta, & Beans",
+        icon: "dish-10.jpg",
+        key: "ricegrainpastabeans",
+      },
+      {
+        name: "Baking Cooking Needs",
+        icon: "dish-11.jpg",
+        key: "bakingcookingneeds",
+      },
     ],
     activeItem: "",
   }),

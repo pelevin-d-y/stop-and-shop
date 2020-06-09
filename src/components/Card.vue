@@ -79,9 +79,10 @@ export default {
 .cost {
   margin-bottom: 10px;
 
-  font-family: Effra;
+
   font-size: 18px;
   font-weight: bold;
+  font-family: "Effra";
   text-align: center;
   color: #333333;
   line-height: 1.06;
@@ -90,16 +91,16 @@ export default {
 .name {
   margin-bottom: 2px;
 
-  font-family: Effra;
-  font-size: 14px;
+  font-family: "Effra";
+  font-size: 16px;
   line-height: 1.21;
-  letter-spacing: 0.18px;
+  letter-spacing: 0.2px;
   text-align: center;
   color: #001919;
 }
 
 .description {
-  margin-bottom: 38px;
+  margin-bottom: 20px;
 
   font-family: Effra;
   font-size: 14px;
