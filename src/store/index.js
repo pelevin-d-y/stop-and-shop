@@ -30,7 +30,7 @@ export default new Vuex.Store({
 
     setCurrentTopFilter(state, name) {
       state.currentTopFilter = name
-    },    
+    },
 
     setCurrentFilter(state, name) {
       state.currentFilter = name

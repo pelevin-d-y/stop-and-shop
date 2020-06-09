@@ -19,7 +19,7 @@ import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: "Filters",
   data: () => ({
-    activeItem: '' 
+    activeItem: ''
   }),
 
   computed: {
@@ -67,7 +67,7 @@ export default {
 
   &::after {
     content: '';
-    flex: 0 0 20px; 
+    flex: 0 0 20px;
   }
 }
 
@@ -75,7 +75,7 @@ export default {
   padding: 7px 19px;
   margin-right: 5px;
 
-  border-radius: 15px;
+  border-radius: 20px;
   border: solid 2px #d9d9d9;
   background-color: #f5f5f5;
 

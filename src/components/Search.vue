@@ -1,90 +1,19 @@
 <template>
-   <form class="search" action="/search">
-    <autocomplete 
-      :search="search"
-      :get-result-value="getResultValue"
-      @submit="handleSubmit"
-    >
-      <template 
-        #result="{ result, props }"
-      >
-        <li
-          v-bind="props"
-          class="autocomplete-result"
-        >
-          <div class="autocomplete-title">
-            {{ result.type }}    
-          </div>
-          <div>
-            {{ result.quantity }}    
-          </div>
-        </li>
-      </template>
-    </autocomplete>
+  <form class="search" action="/search">
+    <input type="search" placeholder="Search" />
   </form>
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
-import Autocomplete from '@trevoreyre/autocomplete-vue'
+// import { mapGetters, mapMutations } from 'vuex';
+// import Autocomplete from '@trevoreyre/autocomplete-vue'
 
 export default {
-  components: {
-    Autocomplete
-  },
 
-  data: () => ({
-    productsArray: []
-  }),
-
-  computed: {
-    ...mapGetters([
-      'getFilteredProducts'
-    ])
-  },
-
-  methods: {
-    ...mapMutations([
-      'filterProductsByType'
-    ]),
-
-    search(input) {
-      const products = this.filterArray()
-      if (input.length < 1) return products
-      return products.filter(product => {
-        return product.type.toLowerCase()
-          .startsWith(input.toLowerCase())
-      })
-    },
-
-    filterArray() {
-      let productTypes = [...new Set(this.getFilteredProducts.cards.map(card => card.type))]
-      productTypes = productTypes.map(productType => {
-        let quantity = this.getFilteredProducts.cards.filter(({type}) => productType === type).length
-        return {
-          type: productType,
-          quantity
-        }
-      })
-     
-      return productTypes
-    },
-
-    getResultValue(result) {
-      return result.type
-    },
-
-    handleSubmit(result) {
-      this.filterProductsByType({type: result.type, products: this.getFilteredProducts})
-    }
-  }
 }
 </script>
 
 <style scoped lang="scss">
-.autocomplete-result {
-  background: #ffffff;
-}
 
 .search {
   position: relative;

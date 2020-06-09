@@ -8,7 +8,7 @@
       </div>
       <div class="header_wrapper">
         <a href="#" class="menu-btn" @click.prevent="menuHandler">
-          <span></span>
+          <span><img src="../assets/images/menu-button.svg" alt="cross" /></span>
         </a>
         <div @click="menuHandler" :class="{ visible: isOpen, cross: true}">
           <div class="cross-img">
@@ -65,9 +65,7 @@ export default {
 <style lang="scss">
 header {
   background: white;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px;
 }
 .dialog {
   position: relative;
@@ -104,12 +102,11 @@ header {
 .menu-btn span::after {
   position: absolute;
   top: 50%;
-  margin-top: -1px;
+  margin-top: -9px;
   left: 50%;
   margin-left: -10px;
   width: 20px;
   height: 2px;
-  background-color: #222;
 }
 
 .menu-btn span::before,
@@ -145,6 +142,10 @@ header {
   align-items: center;
 }
 
+.header_logo {
+  margin-left: -10px;
+}
+
 .header_basket {
   display: flex;
   justify-content: space-around;
@@ -154,8 +155,10 @@ header {
   align-items: center;
   background: #e0004d;
   border-radius: 10px;
-  padding-left: 3px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   cursor: pointer;
 }
 
