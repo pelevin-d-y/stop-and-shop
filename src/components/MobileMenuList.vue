@@ -1,110 +1,51 @@
 <template>
   <ul class="mobile_menu-list">
-    <li class="dish_item">
+    <li class="dish_item" 
+      v-for="item in getAllProductsInfo" 
+      :key="item.key" 
+      @click="itemSelect(item.key)">
       <a href="#">
         <div class="dish_item-img">
-          <img src="../assets/images/dish-1.jpg" alt="dish" />
+          <img :src="require('../assets/images/' +
+            item.icon)" alt="dish" />
         </div>
-        <div class="dish_item-text">Meal Solutions & Kits</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-2.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Produce</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-3.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Meat</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/seafood.png" alt="dish" />
-        </div>
-        <div class="dish_item-text">Seafood</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-5.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Deli</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-6.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Dairy</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-7.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Beverages</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-8.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Bread & Bakery</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-9.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Frozen</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-10.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Rice, Grains, Pasta, & Beans</div>
-      </a>
-    </li>
-
-    <li class="dish_item">
-      <a href="#">
-        <div class="dish_item-img">
-          <img src="../assets/images/dish-11.jpg" alt="dish" />
-        </div>
-        <div class="dish_item-text">Baking & Cooking Needs</div>
+        <div class="dish_item-text">{{ item.name }}</div>
       </a>
     </li>
   </ul>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   name: "MobileMenuList",
-  components: {}
+  props: {
+    menuHandler: Function
+  },
+
+  components: {},
+   computed: {
+   ...mapGetters([
+      'getCurrentProducts',
+      'getTopFilter',
+      'getAllProductsInfo'
+    ])
+  },
+
+  methods: {
+    ...mapMutations([
+      'setCurrentFilter',
+      'setCurrentTopFilter'
+    ]),
+
+    itemSelect(key) {
+      window.scrollTo(0, 0)
+      this.setCurrentTopFilter(key)
+      this.setCurrentFilter('all')
+      this.menuHandler()
+    },
+  }
 };
 </script>
 

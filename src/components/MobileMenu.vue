@@ -5,7 +5,7 @@
       <div class="backlink-text">Back to Main Menu</div>
     </a>
     <div class="mobile_menu-title">Browse Aisles</div>
-    <MobileMenuList />
+    <MobileMenuList :menuHandler="menuHandler"/>
   </div>
 </template>
 
