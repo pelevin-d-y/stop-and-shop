@@ -26,9 +26,7 @@
         </div>
       </div>
       <div class="header_search">
-        <form class="search" action="/search">
-          <input type="search" placeholder="Search" />
-        </form>
+        <search />
       </div>
     </div>
   </header>
@@ -36,6 +34,8 @@
 
 <script>
 import MobileMenu from "@/components/MobileMenu";
+import Search from "@/components/Search";
+
 export default {
   name: "Header",
 
@@ -44,7 +44,8 @@ export default {
   }),
 
   components: {
-    MobileMenu
+    MobileMenu,
+    Search
   },
 
   methods: {
@@ -56,7 +57,7 @@ export default {
       if (evt.target === this.$refs.overlay) {
         this.menuHandler()
       }
-    }
+    },
   }
 };
 </script>
@@ -168,36 +169,5 @@ header {
 
 .header_search {
   margin-top: 10px;
-  .search {
-    position: relative;
-    input {
-      border-radius: 10px;
-      border: solid 2px #d9d9d6;
-      background-color: #f4f4f4;
-      box-sizing: border-box;
-      width: 100%;
-      padding-left: 30px;
-      padding-top: 6px;
-      padding-bottom: 6px;
-      font-family: Effra;
-      font-size: 14px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.36;
-      letter-spacing: normal;
-      color: #001919;
-    }
-  }
-  .search:after {
-    position: absolute;
-    top: 10px;
-    left: 8px;
-    display: block;
-    content: "";
-    width: 16px;
-    height: 16px;
-    background: url("../assets/images/Search.svg") center no-repeat;
-  }
 }
 </style>

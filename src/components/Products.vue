@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="cards">
-          <div class="card-item" v-for="card in product.cards" :key="card.name">
+          <div class="card-item" v-for="(card, index) in product.cards" :key="card.name + index">
             <Card :card="card" />
           </div>
         </div>
