@@ -24,8 +24,8 @@ export default {
     box-sizing: border-box;
     width: 100%;
     padding-left: 34px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     font-family: Effra;
     font-size: 14px;
     font-weight: normal;
@@ -38,7 +38,7 @@ export default {
 }
 .search:after {
   position: absolute;
-  top: 14px;
+  top: 10px;
   left: 8px;
   display: block;
   content: "";

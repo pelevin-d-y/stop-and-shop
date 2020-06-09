@@ -97,6 +97,7 @@ export default {
 }
 
 .item.active {
+  background: #ffffff;
   border-color: #e0004d;
   color: #e0004d;
 }

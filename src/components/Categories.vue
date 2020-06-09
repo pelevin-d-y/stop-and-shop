@@ -111,7 +111,7 @@ export default {
 .item-wrapper {
   padding: 2px;
   border: solid 3px transparent;
-  border-radius: 24px;
+  border-radius: 27px;
 }
 
 .produce-list {
