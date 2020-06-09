@@ -41,6 +41,7 @@ export default {
     ]),
 
     itemSelect(key, name) {
+      window.scrollTo(0,0);
       const topFilter = this.getTopFilter
       this.setCurrentFilter(key)
       this.filterProducts({name, topFilter})

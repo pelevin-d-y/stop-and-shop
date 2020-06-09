@@ -122,9 +122,10 @@ export default {
     ]),
 
     itemSelect(key) {
+      window.scrollTo(0, 0)
       this.activeItem = key;
-      this.setCurrentTopFilter(key);
-      this.setCurrentFilter('all');
+      this.setCurrentTopFilter(key)
+      this.setCurrentFilter('all')
     },
 
     getProduceBackground() {
