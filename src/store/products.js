@@ -15,39 +15,45 @@ export default {
            name: "Avocados Hass",
            cost: "$0.75",
            description: '1 ea | $0.75 / ea',
-           image: "fruit-1.png"
+           image: "fruit-1.png",
+           category: "Avocado"
          },
          {
            name: "Oranges Navel",
            cost: "$0.66",
            description: '1 ea | $0.66 / ea',
-           image: "fruit-2.png"
+           image: "fruit-2.png",
+           category: "Avocado"
          },
          {
            name: "Pineapple Golden Whole",
            cost: "$2.50",
            description: '1 ea | $2.50 / ea',
-           image: "fruit-3.png"
+           image: "fruit-3.png",
+           category: "Pineapple"
          },
          {
            name: "Strawberries",
            cost: "$4.99",
            description: '16 oz pkg | $0.31 / oz',
-           image: "fruit-4.png"
+           image: "fruit-4.png",
+           category: "Strawberries"
          },
          {
            name: "Chiquita Bananas Yellow (Minimum 4-6 ct)",
            cost: "$1.22",
            description: '1 bunch | $1.22 / ea',
-           image: "fruit-5.png"
+           image: "fruit-5.png",
+           category: "Banana"
          },
          {
            name: "Apples Granny Smith",
            cost: "$1.09",
            description: '1 ea | $1.09 / ea',
-           image: "fruit-6.png"
+           image: "fruit-6.png",
+           category: "Apple"
          },
-       ]
+       ],
      },
      {
        name: 'Fresh Vegetables',
@@ -57,37 +63,43 @@ export default {
            name: "Potatoes Baking Russet Large",
            cost: "$1.07",
            description: '1 ea | $1.09 / ea',
-           image: "vegetable-1.png"
+           image: "vegetable-1.png",
+           category: "Potato"
          },
          {
            name: "Green Onions (Scallions)",
            cost: "$1.25",
            description: '1 bunch | $1.25 / ea',
-           image: "vegetable-2.png"
+           image: "vegetable-2.png",
+           category: "Onion"
          },
          {
            name: "Garlic",
            cost: "$0.79",
            description: '1 head | $0.79 / ea',
-           image: "vegetable-3.png"
+           image: "vegetable-3.png",
+           category: "Garlic"
          },
          {
            name: "Bell Peppers Red",
            cost: "$1.79",
            description: '1 ea | $1.79 / ea',
-           image: "vegetable-4.png"
+           image: "vegetable-4.png",
+           category: "Pepper"
          },
          {
            name: "Celery",
            cost: "$1.50",
            description: '1 bunch | $1.50 / ea',
-           image: "vegetable-5.png"
+           image: "vegetable-5.png",
+           category: "Celery"
          },
          {
            name: "Cucumbers",
            cost: "$0.66",
            description: '1 ea | $0.66 / ea',
-           image: "vegetable-6.png"
+           image: "vegetable-6.png",
+           category: "Cucumbers"
          },
        ]
      },
@@ -99,19 +111,22 @@ export default {
            name: "Driscoll's Blueberries Organic",
            cost: "$2.99",
            description: '16 oz pkg | $0.25 / oz',
-           image: "sponsored-1.png"
+           image: "sponsored-1.png",
+           category: "Blueberry"
          },
          {
            name: "Dricoll's Raspberries",
            cost: "$4.99",
            description: '8 oz bag | $4.00 / lb',
-           image: "sponsored-3.png"
+           image: "sponsored-3.png",
+           category: "Raspberry"
          },
          {
            name: "Dricoll's Strawberries",
            cost: "$4.99",
            description: '8 oz bag | $4.00 / lb',
-           image: "sponsored-2.png"
+           image: "sponsored-2.png",
+           category: "Strawberry"
          },
        ]
      },
@@ -123,37 +138,43 @@ export default {
            name: "Cilantro Fresh",
            cost: "$1.19",
            description: '1 bunch | $1.19 / ea',
-           image: "herb-1.png"
+           image: "herb-1.png",
+           category: "Cilantro"
          },
          {
            name: "Living Culinary Cilantro Plant Organic",
            cost: "$2.99",
            description: '1 ea | $2.99 / ea',
-           image: "herb-2.png"
+           image: "herb-2.png",
+           category: "Cilantro"
          },
          {
            name: "Nature's Promise Organic Basil",
            cost: "$4.79",
            description: '4 oz pkg | $1.20 / oz',
-           image: "herb-3.png"
+           image: "herb-3.png",
+           category: "Basil"
          },
          {
            name: "Nature's Promise Organic Basil Fresh",
            cost: "$3.29",
            description: '2.5 oz pkg | $1.32 / oz',
-           image: "herb-4.png"
+           image: "herb-4.png",
+           category: "Basil"
          },
          {
            name: "Parsley Curly",
            cost: "$4.99",
            description: '1 bunch | $1.19 / ea',
-           image: "herb-5.png"
+           image: "herb-5.png",
+           category: "Parsley"
          },
          {
            name: "Parsley Italian Flat-Leaf",
            cost: "$1.19",
            description: '1 bunch | $1.19 / ea',
-           image: "herb-6.png"
+           image: "herb-6.png",
+           category: "Parsley"
          },
        ]
      },
@@ -165,37 +186,43 @@ export default {
            name: "Bolthouse Farms 100% Carrot Juice Fresh",
            cost: "$5.00",
            description: '52 oz btl | $0.10 / oz',
-           image: "juice-1.png"
+           image: "juice-1.png",
+           category: "Carrot"
          },
          {
            name: "Alo Enrich Aloe Vera Juice Drink Pomegranate + Cranberry",
            cost: "$1.74",
            description: '16.9 oz btl | $0.10 / oz',
-           image: "juice-2.png"
+           image: "juice-2.png",
+           category: "Carrot"
          },
          {
            name: "Apple Cider",
            cost: "$4.99",
            description: '1 gal | $0.04 / oz',
-           image: "juice-3.png"
+           image: "juice-3.png",
+           category: "Carrot"
          },
          {
            name: "POM Wonderful Cherry Pomegrante 100% Juice",
            cost: "$9.99",
            description: '48 oz btl | $0.21 / oz',
-           image: "juice-4.png"
+           image: "juice-4.png",
+           category: "Cherry"
          },
          {
            name: "Aloevine Aloe Vera Drink Mango",
            cost: "$3.49",
            description: '50.7 oz btl | $0.07 / oz',
-           image: "juice-5.png"
+           image: "juice-5.png",
+           category: "Cherry"
          },
          {
            name: "Big Red Truck Cider",
            cost: "$1.99",
            description: '16 oz btl | $0.12 / oz',
-           image: "juice-6.png"
+           image: "juice-6.png",
+           category: "Cherry"
          },
        ]
      },
@@ -207,37 +234,43 @@ export default {
            name: "Fresh Cut Strawberries & Blueberries",
            cost: "$3.25",
            description: 'apx 1/2 lb | $6.49 / lb',
-           image: "cut-fruit-vegetable-1.png"
+           image: "cut-fruit-vegetable-1.png",
+           category: "Strawberry"
          },
          {
            name: "Celery Diced Fresh",
            cost: "$2.50",
            description: '8 oz tub | $0.37 / oz',
-           image: "cut-fruit-vegetable-2.png"
+           image: "cut-fruit-vegetable-2.png",
+           category: "Strawberry"
          },
          {
            name: "Nature's Promise Organic Fresh Cut Vegetables Yellow Onions Diced",
            cost: "$4.99",
            description: '8 oz tub | $0.31 / oz',
-           image: "cut-fruit-vegetable-3.png"
+           image: "cut-fruit-vegetable-3.png",
+           category: "Strawberry"
          },
          {
            name: "Mixed Fruit Cup",
            cost: "$3.44",
            description: 'apx 11 oz | $4.99 / lb',
-           image: "cut-fruit-vegetable-4.png"
+           image: "cut-fruit-vegetable-4.png",
+           category: "Strawberry"
          },
          {
            name: "Kiwi Slices",
            cost: "$3.59",
            description: 'apx 11 oz | $4.99 / lb',
-           image: "cut-fruit-vegetable-5.png"
+           image: "cut-fruit-vegetable-5.png",
+           category: "Kiwi"
          },
          {
            name: "Fresh Vegetables Aspargus Spears",
            cost: "$5.49",
            description: '12 oz pkg | $0.46 / oz',
-           image: "cut-fruit-vegetable-6.png"
+           image: "cut-fruit-vegetable-6.png",
+           category: "Kiwi"
          },
        ]
      },
@@ -249,37 +282,43 @@ export default {
            name: "BrightFarms Local Baby Arugula Salad",
            cost: "$2.50",
            description: '4 oz pkg | $0.63 / oz',
-           image: "package-produce-1.png"
+           image: "package-produce-1.png",
+           category: "Salad"
          },
          {
            name: "Fresh Green Beans Trimmed & Washed",
            cost: "$2.50",
            description: '12 oz pkg | $0.21 / oz',
-           image: "package-produce-2.png"
+           image: "package-produce-2.png",
+           category: "Salad"
          },
          {
            name: "Bob Evans Potatoes Hash Browns Shredded Seasoned",
            cost: "$2.69",
            description: '20 oz bag | $0.13 / oz',
-           image: "package-produce-3.png"
+           image: "package-produce-3.png",
+           category: "Salad"
          },
          {
            name: "Premium Salad Italian House Blend",
            cost: "$2.50",
            description: '8 oz bag | $0.31 / oz',
-           image: "package-produce-4.png"
+           image: "package-produce-4.png",
+           category: "Salad"
          },
          {
            name: "Spinach Ready to Microwave",
            cost: "$2.99",
            description: '9 oz bag | $0.33 / oz',
-           image: "package-produce-5.png"
+           image: "package-produce-5.png",
+           category: "Salad"
          },
          {
            name: "Carrot Chips Organic",
            cost: "$2.99",
            description: '16 oz pkg | $0.19 / oz',
-           image: "package-produce-6.png"
+           image: "package-produce-6.png",
+           category: "Chips"
          },
        ]
      },
@@ -291,37 +330,43 @@ export default {
            name: "barnana Chewy Banana Bites Grain Free Vegan Organic",
            cost: "$3.99",
            description: '3.5 oz bag | $1.14 / oz',
-           image: "nuts-1.png"
+           image: "nuts-1.png",
+           category: "Banana"
          },
          {
            name: "Dang Coconut Chips Caramel Sea Salt Toasted",
            cost: "$1.74",
            description: '3.17 oz bag | $1.05 / oz',
-           image: "nuts-2.png"
+           image: "nuts-2.png",
+           category: "Banana"
          },
          {
            name: "Almonds Whole",
            cost: "$8.99",
            description: '22 oz pkg | $0.41 / oz',
-           image: "nuts-3.png"
+           image: "nuts-3.png",
+           category: "Banana"
          },
          {
            name: "Mariani Wild Bluberries",
            cost: "$4.29",
            description: '3.5 oz bag | $1.23 / oz',
-           image: "nuts-4.png"
+           image: "nuts-4.png",
+           category: "Banana"
          },
          {
            name: "Nature's Promise Organic Cashews Roasted Unsalted",
            cost: "$6.99",
            description: '9 oz tub | $0.78 / oz',
-           image: "nuts-5.png"
+           image: "nuts-5.png",
+           category: "Sugar"
          },
          {
            name: "Aurora Natural Granola Brown Sugar Crunch",
            cost: "$5.49",
            description: '14 oz tub | $0.39 / oz',
-           image: "nuts-6.png"
+           image: "nuts-6.png",
+           category: "Sugar"
          },
        ]
      },
@@ -333,37 +378,43 @@ export default {
            name: "Nature's Promise Organic Extra Firm Tofu",
            cost: "$1.99",
            description: '14 oz pkg | $0.14 / oz',
-           image: "tofu-1.png"
+           image: "tofu-1.png",
+           category: "Tofu"
          },
          {
            name: "House Foods Tofu Premium Firm",
            cost: "$1.99",
            description: '16 oz pkg | $0.12 / oz',
-           image: "tofu-2.png"
+           image: "tofu-2.png",
+           category: "Tofu"
          },
          {
            name: "Lightlife Tempeh Three Grain Organic",
            cost: "$3.00",
            description: '8 oz pkg | $0.38 / oz',
-           image: "tofu-3.png"
+           image: "tofu-3.png",
+           category: "Tofu"
          },
          {
            name: "Nasoya Extra Firm Tofu Twin Pack - 2 ct",
            cost: "$3.29",
            description: '15.5 oz pkg | $0.21 / oz',
-           image: "tofu-4.png"
+           image: "tofu-4.png",
+           category: "Tofu"
          },
          {
            name: "Hodo Tofu Cubes Chermoula Moroccan Organic",
            cost: "$5.99",
            description: '8 oz pkg | $0.75 / oz',
-           image: "tofu-5.png"
+           image: "tofu-5.png",
+           category: "Tofu"
          },
          {
            name: "Hodo Tofu Cubes Southern Barbecue Organic",
            cost: "$5.99",
            description: '8 oz pkg | $0.75 / oz',
-           image: "tofu-6.png"
+           image: "tofu-6.png",
+           category: "Tofu"
          },
        ]
      },
@@ -375,37 +426,43 @@ export default {
            name: "Country Garden Bouquet",
            cost: "$14.99",
            description: '1 bunch | $14.99 / ea',
-           image: "floral-1.png"
+           image: "floral-1.png",
+           category: "Bouquet"
          },
          {
            name: "Amethyst Bouquet",
            cost: "$9.99",
            description: '1 bunch | $9.99 / ea',
-           image: "floral-2.png"
+           image: "floral-2.png",
+           category: "Bouquet"
          },
          {
            name: "Simply Enjoy Bouquet",
            cost: "$25.99",
            description: '1 bunch | $25.99 / ea',
-           image: "floral-3.png"
+           image: "floral-3.png",
+           category: "Bouquet"
          },
          {
            name: "Blooming Attraction Bouquet",
            cost: "$12.99",
            description: '1 bunch | $12.99 / ea',
-           image: "floral-4.png"
+           image: "floral-4.png",
+           category: "Bouquet"
          },
          {
            name: "Boston Fern 8 Inch",
            cost: "$14.99",
            description: '1 bunch | $14.99 / ea',
-           image: "floral-5.png"
+           image: "floral-5.png",
+           category: "Bouquet"
          },
          {
            name: "Cyclamen 6 Inch Pot (Assorted Colors)",
            cost: "$9.99",
            description: '1 bunch | $9.99 / ea',
-           image: "floral-6.png"
+           image: "floral-6.png",
+           category: "Bouquet"
          },
        ]
      }
@@ -427,37 +484,43 @@ export default {
             name: "Ground Beef 80% Lean Fresh",
             cost: "$5.99",
             description: 'apx 1.2 lb | $4.99 / lb',
-            image: "beef-2.png"
+            image: "beef-2.png",
+            category: "Beef"
           },
           {
             name: "Ground Beef 85% Lean Value Pack Fresh",
             cost: "$16.93",
             description: 'apx 3.2 lb | $5.29 / lb',
-            image: "beef-1.png"
+            image: "beef-1.png",
+            category: "Beef"
           },
           {
             name: "Today's Kitchen Beef Patties Bacon Cheddar - 4 ct Fresh",
             cost: "$8.78",
             description: '1.33 lb pkg | $6.60 / lb',
-            image: "beef-3.png"
+            image: "beef-3.png",
+            category: "Beef"
           },
           {
             name: "Nature's Promise Organic Ground Beef Grass-fed Family Size",
             cost: "$18.98",
             description: '3 lb pkg | $6.33 / lb',
-            image: "beef-4.png"
+            image: "beef-4.png",
+            category: "Beef"
           },
           {
             name: "Butcher's Shop Choice Beef Bottom Round Roast Vacuum Sealed",
             cost: "$20.97",
             description: 'apx 3 lb | $6.99 / lb',
-            image: "beef-5.png"
+            image: "beef-5.png",
+            category: "Beef"
           },
           {
             name: "Bubba Burger Bacon Cheddar Cheeseburgers - 6 ct Frozen",
             cost: "$12.49",
             description: '2 lb box | $6.25 / lb',
-            image: "beef-6.png"
+            image: "beef-6.png",
+            category: "Beef"
           },
         ]
       },
