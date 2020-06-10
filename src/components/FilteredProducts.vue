@@ -1,7 +1,7 @@
 <template>
   <div class="products">
     <div class="container">
-      <div class="products-header">
+      <router-link to="/search" class="products-header">
         <div class="search">
           <div class="search-icon">
           </div>
@@ -12,7 +12,7 @@
         <div class="sort">
           Sort / Filter
         </div>
-      </div>
+      </router-link>
       <div class="products-wrapper">
         <div class="card-item" v-for="(product, index) in getFilteredProducts.cards" :key="product.name + index" >
           <CardFilter :card="product"/>

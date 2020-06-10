@@ -3,11 +3,7 @@
     <input type="search" placeholder="Search" />
   </form>
 </template>
-
 <script>
-// import { mapGetters, mapMutations } from 'vuex';
-// import Autocomplete from '@trevoreyre/autocomplete-vue'
-
 export default {
 
 }
