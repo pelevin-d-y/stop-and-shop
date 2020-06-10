@@ -34,6 +34,14 @@ export default new Vuex.Store({
 
     setCurrentFilter(state, name) {
       state.currentFilter = name
+    },
+
+    filterProductsBySubfilter(state, {name, filteredProducts}) {
+      
+      return state.filteredProducts = {
+        ...state.filteredProducts,
+        cards: filteredProducts.cards.filter(card => card.category === name)
+      } 
     }
   },
 
