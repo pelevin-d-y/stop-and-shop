@@ -5,7 +5,7 @@
     </div>
     <ul class="subfilters__list">
       <li class="subfilters__item" 
-        v-for="(quantity, name, index) in getCategories()" 
+        v-for="(quantity, name, index) in categories" 
         :key="name+index"
         @click="categoryClick(name)">
         <div class="name">
@@ -22,10 +22,34 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex';
 export default {
+  props: {
+    searchValue: String
+  },
+
   computed: {
     ...mapGetters([
+      'getSubFilter',
+      'getTopFilter',
+      'getFilter',
       'getFilteredProducts'
-    ])
+    ]),
+
+    categories: function () {
+      let categories = this.getFilteredProducts.cards.reduce((counts, card) => {
+        counts[card.category] = counts[card.category] ? ++counts[card.category] : 1;
+        return counts
+      }, {})
+
+      let searchCategories = {}
+
+      Object.entries(categories).map(([key, value]) => {
+        if (key.toLowerCase().includes(this.searchValue.toLowerCase())) {
+          searchCategories[key] = value
+        }
+      })
+      
+      return searchCategories
+    }
   },
 
   methods: {
@@ -33,16 +57,12 @@ export default {
       'filterProductsBySubfilter',
     ]),
 
-    getCategories() {
-      const categories = this.getFilteredProducts.cards.reduce((counts, card) => {
-        counts[card.category] = counts[card.category] ? ++counts[card.category] : 1;
-        return counts
-      }, {})
-      return categories
-    },
-
     categoryClick(name) {
-      this.filterProductsBySubfilter({name, filteredProducts: this.getFilteredProducts})
+      this.filterProductsBySubfilter({
+        name, 
+        topFilter: this.getTopFilter,
+        middleFilter: this.getFilter
+      })
       this.$router.push('/')
     }
   }

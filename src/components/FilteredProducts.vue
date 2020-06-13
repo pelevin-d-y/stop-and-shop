@@ -1,18 +1,22 @@
 <template>
   <div class="products">
     <div class="container">
-      <router-link to="/search" class="products-header">
+      <div @click="searchHandler" class="products-header">
         <div class="search">
           <div class="search-icon">
           </div>
-          <div class="search-text">
+          <div v-if="!getSubFilter" class="search-text">
             Search <span>({{getFilteredProducts.cards.length}})</span>
+          </div>
+          <div v-else class="search-subfilter" >
+            {{ getSubFilter }}
+            <img src="../assets/images/cross-r.svg" class="cross" @click.stop="subfilterCrossHandler" />
           </div>
         </div>
         <div class="sort">
           Sort / Filter
         </div>
-      </router-link>
+      </div>
       <div class="products-wrapper">
         <div class="card-item" v-for="(product, index) in getFilteredProducts.cards" :key="product.name + index" >
           <CardFilter :card="product"/>
@@ -24,7 +28,7 @@
 
 <script>
 import CardFilter from "@/components/CardFilter";
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: "FilteredProducts",
@@ -35,8 +39,29 @@ export default {
 
   computed: {
     ...mapGetters([
+      'getSubFilter',
+      'getTopFilter',
+      'getFilter',
       'getFilteredProducts'
     ])
+  },
+
+  methods: {
+    ...mapMutations([
+      'filterProductsBySubfilter',
+      'filterProducts'
+    ]),
+
+    subfilterCrossHandler() {
+      this.filterProductsBySubfilter({
+        name: '', 
+        topFilter: this.getTopFilter, 
+        middleFilter: this.getFilter})
+    },
+
+    searchHandler() {
+      this.$router.push('search') 
+    }
   },
 }
 </script>
@@ -54,6 +79,8 @@ export default {
   background-color: #f5f5f5;
   border-top: solid 1px #d9d9d9;
   border-bottom: solid 1px #d9d9d9;
+
+  cursor: pointer;
 }
 
 .search-text {
@@ -87,5 +114,17 @@ export default {
   width: 16px;
   height: 16px;
   background: url("../assets/images/Search.svg") center no-repeat;
+}
+
+.search-subfilter {
+  display: flex;
+  flex-flow: row nowrap;
+  color: #001919;
+  font-weight: bold;
+}
+
+.cross {
+  width: 13px;
+  margin-left: 6px;
 }
 </style>

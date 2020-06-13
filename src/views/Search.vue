@@ -2,22 +2,41 @@
   <div class="search-page">
     <div class="search-input">
       <div class="container search__container">
-        <input class="input" type="text">
+        <input class="input" v-model="subfilterValue" type="text">
         <router-link to="/" class="close"></router-link>
       </div>
     </div>
-    <Subfilters />
+    <Subfilters :searchValue="subfilterValue" />
   </div>
 </template>
 
 <script>
 import Subfilters from '@/components/Subfilters'
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'searchPage',
 
+  computed: {
+    ...mapGetters([
+      'getSubFilter'
+    ])
+  },
+
   components: {
     Subfilters
+  },
+
+  data:() => ({
+    subfilterValue: ''
+  }),
+
+  mounted() {
+    this.subfilterValue = this.getSubFilter
+  },
+
+  methods: {
+
   }
 }
 </script>
