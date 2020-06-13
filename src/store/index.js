@@ -10,6 +10,7 @@ export default new Vuex.Store({
     products: products,
     currentTopFilter: 'produce',
     currentFilter: 'all',
+    currentSubFilter: '',
     filteredProducts: []
   },
 
@@ -18,7 +19,8 @@ export default new Vuex.Store({
     getCurrentProducts: (state, getters) => state.products[getters.getTopFilter].data,
     getFilteredProducts: (state) => state.filteredProducts,
     getFilter: (state) => state.currentFilter,
-    getTopFilter: (state) => state.currentTopFilter
+    getTopFilter: (state) => state.currentTopFilter,
+    getSubFilter: (state) => state.currentSubFilter
   },
 
 
@@ -36,12 +38,20 @@ export default new Vuex.Store({
       state.currentFilter = name
     },
 
-    filterProductsBySubfilter(state, {name, filteredProducts}) {
-      
-      return state.filteredProducts = {
-        ...state.filteredProducts,
-        cards: filteredProducts.cards.filter(card => card.category === name)
-      } 
+    filterProductsBySubfilter(state, {name, topFilter, middleFilter}) {
+      const filteredProducts = state.products[topFilter].data.find(product => product.name === middleFilter)
+      state.filteredProducts = filteredProducts
+      if (name) {
+        state.filteredProducts = {
+          ...state.filteredProducts,
+          cards: filteredProducts.cards.filter(card => card.category === name)
+        } 
+      }
+        state.currentSubFilter = name
+    },
+
+    setCurrentSubfilter(state, name) {
+      state.currentSubFilter = name
     }
   },
 
