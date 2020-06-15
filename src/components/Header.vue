@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 header {
   background: white;
   padding: 20px;

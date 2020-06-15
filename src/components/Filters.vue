@@ -37,7 +37,8 @@ export default {
   methods: {
     ...mapMutations([
       'filterProducts',
-      'setCurrentFilter'
+      'setCurrentFilter',
+      'setCurrentSubfilter'
     ]),
 
     itemSelect(key, name) {
@@ -45,6 +46,7 @@ export default {
       const topFilter = this.getTopFilter
       this.setCurrentFilter(key)
       this.filterProducts({name, topFilter})
+      this.setCurrentSubfilter('')
       this.activeItem = key
     },
 
