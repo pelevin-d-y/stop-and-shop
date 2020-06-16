@@ -23,7 +23,8 @@
 import { mapGetters, mapMutations } from 'vuex';
 export default {
   props: {
-    searchValue: String
+    searchValue: String,
+    isFilter: Boolean
   },
 
   computed: {
@@ -42,8 +43,10 @@ export default {
 
       let searchCategories = {}
 
+      const currentSearchValue = this.isFilter ? this.searchValue.toLowerCase() : ''
+
       Object.entries(categories).map(([key, value]) => {
-        if (key.toLowerCase().includes(this.searchValue.toLowerCase())) {
+        if (key.toLowerCase().includes(currentSearchValue)) {
           searchCategories[key] = value
         }
       })
