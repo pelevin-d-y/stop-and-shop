@@ -1,11 +1,15 @@
 <template>
   <div class="filters">
     <div class="container">
-      <ul class="list">
+      <ul class="list" ref="filters">
         <li :class="classItem('all')" key="all" @click="itemSelect('all', 'all')">
             All
         <li>
-        <li v-for="(product) in getCurrentProducts" :class="classItem(product.key)" :key="product.key" @click="itemSelect(product.key, product.name)">
+        <li v-for="(product) in getCurrentProducts" 
+          :class="classItem(product.key)" 
+          :key="product.key" 
+          @click="itemSelect(product.key, product.name, $event)"
+        >
             {{ product.name }}
         </li>
       </ul>
@@ -15,6 +19,7 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex';
+import scrollElementToCenter from '@/helpers/scrollElementToCenter'
 
 export default {
   name: "Filters",
@@ -32,6 +37,7 @@ export default {
 
   mounted() {
     this.activeItem = this.getFilter
+    scrollElementToCenter(this.$refs.filters)
   },
 
   methods: {
@@ -42,12 +48,14 @@ export default {
     ]),
 
     itemSelect(key, name) {
-      window.scrollTo(0,0);
+      window.scrollTo(0,0)
+      this.activeItem = key
+
       const topFilter = this.getTopFilter
       this.setCurrentFilter(key)
       this.filterProducts({name, topFilter})
       this.setCurrentSubfilter('')
-      this.activeItem = key
+      this.$nextTick(() => scrollElementToCenter(this.$refs.filters))
     },
 
     classItem(key) {
