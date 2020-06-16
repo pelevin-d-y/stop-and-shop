@@ -8,7 +8,7 @@
     </div>
     <div class="produce-wrapper">
       <div class="container">
-        <ul class="produce-list" :style="getProduceBackground()">
+        <ul class="produce-list" ref="categories" :style="getProduceBackground()">
           <li
             v-for="item in getAllProductsInfo"
             :key="item.key"
@@ -39,6 +39,7 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex';
+import scrollElementToCenter from '@/helpers/scrollElementToCenter'
 
 export default {
   name: "Produce",
@@ -56,6 +57,7 @@ export default {
 
   mounted() {
     this.activeItem = this.getAllProductsInfo[0].key;
+    scrollElementToCenter(this.$refs.categories)
   },
 
   methods: {
@@ -69,6 +71,8 @@ export default {
       this.activeItem = key;
       this.setCurrentTopFilter(key)
       this.setCurrentFilter('all')
+
+      this.$nextTick(() => scrollElementToCenter(this.$refs.categories))
     },
 
     getProduceBackground() {

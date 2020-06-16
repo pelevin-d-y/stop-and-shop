@@ -2,24 +2,26 @@
   <div class="search-page">
     <div class="search-input">
       <div class="container search__container">
-        <input class="input" v-model="subfilterValue" type="text">
+        <input class="input" v-model="subfilterValue" @input="isFilter = true" type="text">
         <router-link to="/" class="close"></router-link>
       </div>
     </div>
-    <Subfilters :searchValue="subfilterValue" />
+    <Subfilters :searchValue="subfilterValue" :isFilter="isFilter" />
   </div>
 </template>
 
 <script>
 import Subfilters from '@/components/Subfilters'
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'searchPage',
 
   computed: {
     ...mapGetters([
-      'getSubFilter'
+      'getSubFilter',
+      'getTopFilter',
+      'getFilter'
     ])
   },
 
@@ -28,15 +30,24 @@ export default {
   },
 
   data:() => ({
-    subfilterValue: ''
+    subfilterValue: '',
+    isFilter: false
   }),
 
   mounted() {
     this.subfilterValue = this.getSubFilter
+
+    this.filterProductsBySubfilter({
+      name: '', 
+      topFilter: this.getTopFilter, 
+      middleFilter: this.getFilter
+    })
   },
 
   methods: {
-
+    ...mapMutations([
+      'filterProductsBySubfilter',
+    ])
   }
 }
 </script>
