@@ -11,7 +11,8 @@ export default new Vuex.Store({
     currentTopFilter: 'produce',
     currentFilter: 'all',
     currentSubFilter: '',
-    filteredProducts: []
+    filteredProducts: [],
+    isMiniHeader: false
   },
 
   getters: {
@@ -20,7 +21,8 @@ export default new Vuex.Store({
     getFilteredProducts: (state) => state.filteredProducts,
     getFilter: (state) => state.currentFilter,
     getTopFilter: (state) => state.currentTopFilter,
-    getSubFilter: (state) => state.currentSubFilter
+    getSubFilter: (state) => state.currentSubFilter,
+    getIsMiniHeader: (state => state.isMiniHeader)
   },
 
 
@@ -52,6 +54,10 @@ export default new Vuex.Store({
 
     setCurrentSubfilter(state, name) {
       state.currentSubFilter = name
+    },
+
+    changeIsMiniHeader(state, value) {
+      state.isMiniHeader = value
     }
   },
 

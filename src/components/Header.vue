@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="sticky">
     <div class="container">
       <div :class="{ visible: isOpen, overlay: true}" ref="overlay" @click="overlayClick">
         <div class="dialog">
@@ -15,8 +15,13 @@
             <img src="../assets/images/cross.svg" alt="cross" />
           </div>
         </div>
-        <div class="header_logo">
-          <img src="../assets/images/Logo.svg" alt="logo" />
+        <div class="header-logo__wrapper">
+          <div v-if="isScrolled" class="header_search header_logo-search">
+            <search />
+          </div>
+          <div v-else class="header_logo">
+            <img src="../assets/images/Logo.svg" alt="logo" />
+          </div>
         </div>
         <div class="header_basket">
           <div class="header_basket-price">$12.97</div>
@@ -25,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="header_search">
+      <div v-if="!isScrolled" class="header_search">
         <search />
       </div>
     </div>
@@ -35,12 +40,14 @@
 <script>
 import MobileMenu from "@/components/MobileMenu";
 import Search from "@/components/Search";
+import { mapMutations } from 'vuex';
 
 export default {
   name: "Header",
 
   data: () => ({
-    isOpen: false
+    isOpen: false,
+    isScrolled: false
   }),
 
   components: {
@@ -48,7 +55,15 @@ export default {
     Search
   },
 
+  mounted() {
+    window.addEventListener('scroll', this.onScroll)
+  },
+
   methods: {
+    ...mapMutations([
+      'changeIsMiniHeader'
+    ]),
+
     menuHandler() {
       this.isOpen = !this.isOpen
     },
@@ -58,6 +73,11 @@ export default {
         this.menuHandler()
       }
     },
+
+    onScroll() {
+      this.isScrolled = pageYOffset >= 210 ? true : false 
+      this.changeIsMiniHeader(this.isScrolled)
+    }
   }
 };
 </script>
@@ -67,6 +87,16 @@ header {
   background: white;
   padding: 20px;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+
+  width: 100%;
+}
+
 .dialog {
   position: relative;
   margin: 0 auto;
@@ -146,6 +176,11 @@ header {
   margin-left: -10px;
 }
 
+.header-logo__wrapper {
+  width: 100%;
+  padding-right: 10px;
+}
+
 .header_basket {
   display: flex;
   justify-content: space-around;
@@ -169,5 +204,9 @@ header {
 
 .header_search {
   margin-top: 10px;
+}
+
+.header_logo-search {
+  margin-top: 0;
 }
 </style>

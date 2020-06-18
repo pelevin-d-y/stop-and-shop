@@ -1,5 +1,5 @@
 <template>
-  <div class="products">
+  <div class="products products-wrapper">
     <div class="container">
       <div :class="getWrapperClass(product.key)" v-for="product in getCurrentProducts" :key="product.key">
         <div class="product-type__header">
