@@ -13,17 +13,23 @@
       <div class="name">
         {{ card.name }}
       </div>
-      <button class="btn">
-        Add to Cart
-      </button>
+      <div class="btn-wrapper">
+        <Button />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Button from '@/components/Button'
+
 export default {
   props: {
     card: Object
+  },
+
+  components: {
+    Button
   },
 
   methods: {
@@ -91,7 +97,7 @@ export default {
   color: #63666a;
 }
 
-.btn {
+.btn-wrapper {
   margin-top: auto;
 }
 </style>
