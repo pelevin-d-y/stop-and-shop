@@ -12,17 +12,23 @@
       <div class="description">
         {{ card.description }}
       </div>
-      <button class="btn">
-        Add to Cart
-      </button>
+      <div class="btn-wrapper">
+        <Button />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Button from '@/components/Button'
+
 export default {
   props: {
     card: Object
+  },
+
+  components: {
+    Button
   },
 
   methods: {
@@ -100,7 +106,7 @@ export default {
 }
 
 .description {
-  margin-bottom: 20px;
+  margin-bottom: 38px;
 
   font-family: Effra;
   font-size: 14px;
@@ -109,9 +115,10 @@ export default {
   color: #63666a;
 }
 
-.btn {
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+
   margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
 }
 </style>

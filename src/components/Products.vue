@@ -12,7 +12,7 @@
         </div>
         <div class="cards">
           <div class="card-item" v-for="(card, index) in product.cards" :key="card.name + index">
-            <Card :card="card" />
+            <Card :card="card" v-if="index < 10" />
           </div>
         </div>
       </div>
