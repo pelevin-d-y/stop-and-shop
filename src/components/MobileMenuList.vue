@@ -4,7 +4,7 @@
       v-for="item in getAllProductsInfo" 
       :key="item.key" 
       @click="itemSelect(item.key)">
-      <a href="#">
+      <a :href="`#${item.key}`">
         <div class="dish_item-img">
           <img :src="require('../assets/images/' +
             item.icon)" alt="dish" />

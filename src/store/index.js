@@ -22,7 +22,7 @@ export default new Vuex.Store({
     getFilter: (state) => state.currentFilter,
     getTopFilter: (state) => state.currentTopFilter,
     getSubFilter: (state) => state.currentSubFilter,
-    getIsMiniHeader: (state => state.isMiniHeader)
+    getIsMiniHeader: state => state.isMiniHeader
   },
 
 

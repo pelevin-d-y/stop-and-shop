@@ -15,7 +15,7 @@
             :class="classItem(item.key)"
             @click="itemSelect(item.key)"
           >
-            <div class="item-wrapper">
+            <a :href="`#${item.key}`" class="item-wrapper">
               <div class="item-content">
                 <span
                   :style="{
@@ -29,7 +29,7 @@
                   {{ item.name }}
                 </span>
               </div>
-            </div>
+            </a>
           </li>
         </ul>
       </div>
@@ -46,6 +46,12 @@ export default {
   data: () => ({
     activeItem: "",
   }),
+
+  watch:{
+    $route() {
+      this.$nextTick(() => scrollElementToCenter(this.$refs.categories))
+    }
+  }, 
 
   computed: {
     ...mapGetters([
@@ -71,8 +77,6 @@ export default {
       this.activeItem = key;
       this.setCurrentTopFilter(key)
       this.setCurrentFilter('all')
-
-      this.$nextTick(() => scrollElementToCenter(this.$refs.categories))
     },
 
     getProduceBackground() {
@@ -113,9 +117,11 @@ export default {
 }
 
 .item-wrapper {
+  display: block;
   padding: 2px;
   border: solid 3px transparent;
   border-radius: 24px;
+  color: #001919;
 }
 
 .produce-list {
