@@ -27,6 +27,12 @@ export default {
     activeItem: ''
   }),
 
+  watch: {
+    $route(to, from) {
+      scrollElementToCenter(this.$refs.filters)
+    }
+  },
+
   computed: {
     ...mapGetters([
       'getCurrentProducts',
