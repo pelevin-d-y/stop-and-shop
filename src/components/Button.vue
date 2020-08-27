@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   .wrapper {
     display: flex;
     flex-flow: row nowrap;

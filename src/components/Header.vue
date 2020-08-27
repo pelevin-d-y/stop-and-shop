@@ -1,20 +1,13 @@
 <template>
   <header class="sticky">
     <div class="container">
-      <div :class="{ visible: isOpen, overlay: true}" ref="overlay" @click="overlayClick">
-        <div class="dialog">
-          <MobileMenu :isOpen="isOpen" :menuHandler="menuHandler" />
-        </div>
+      <div :class="{ visible: isOpen, overlay: true}" ref="overlay" @click="overlayClick">        
+        <MobileMenu :isOpen="isOpen" :menuHandler="menuHandler" />
       </div>
       <div class="header_wrapper">
         <a href="#" class="menu-btn" @click.prevent="menuHandler">
           <span><img src="../assets/images/menu-button.svg" alt="cross" /></span>
         </a>
-        <div @click="menuHandler" :class="{ visible: isOpen, cross: true}">
-          <div class="cross-img">
-            <img src="../assets/images/cross.svg" alt="cross" />
-          </div>
-        </div>
         <div class="header-logo__wrapper">
           <div v-if="isScrolled" class="header_search header_logo-search">
             <search />
@@ -97,21 +90,6 @@ header {
   width: 100%;
 }
 
-.dialog {
-  position: relative;
-  margin: 0 auto;
-  top: 0%;
-  left: 0%;
-  transform: translate(0, 0);
-}
-.cross {
-  opacity: 0;
-  position: absolute;
-  right: -14px;
-  z-index: 0;
-  cursor: pointer;
-  transition: 0.3s;
-}
 .menu-btn {
   position: relative;
   left: -14px;

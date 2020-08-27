@@ -1,72 +1,91 @@
 <template>
   <div class="mobile_menu-wrapper" :class="{ menu_active: isOpen }">
-    <a href="#" class="mobile_menu-backlink" @click.prevent="menuHandler">
-      <img src="../assets/images/arrow-red.svg" alt="arrow" />
-      <div class="backlink-text">Back to Main Menu</div>
-    </a>
-    <div class="mobile_menu-title">Browse Aisles</div>
-    <MobileMenuList :menuHandler="menuHandler"/>
+    <button class="cross-btn">
+      <img src="../assets/images/cross.svg" class="" alt="cross">
+    </button>
+    <div class="menu-header">
+      <div class="menu-header__item">
+        <img src="../assets/images/store-icon.svg" alt="store">
+        <div class="menu-header__item-title">
+          Pick-up
+        </div>
+        <div class="menu-header__item-description">
+          264 E. Main Street
+        </div>
+      </div>
+      <div class="menu-header__item">
+        <img src="../assets/images/clock-icon.svg" alt="store">
+        <div class="menu-header__item-title">
+          Time Slot
+        </div>
+        <div class="menu-header__item-description">
+          Reserve a Time
+        </div>
+      </div>
+    </div>
+    <PrimaryList />
+    <SubList />
+    <AccountList/>
   </div>
 </template>
 
 <script>
-import MobileMenuList from "@/components/MobileMenuList";
+import PrimaryList from '@/components/menu/PrimaryList'
+import SubList from '@/components/menu/SubList'
+import AccountList from '@/components/menu/AccountList'
+
 export default {
+  name: "MobileMenu",
   props: {
     isOpen: Boolean,
     menuHandler: Function
   },
-  name: "MobileMenu",
   components: {
-    MobileMenuList
-  }
+    PrimaryList,
+    SubList,
+    AccountList
+  },
+
+  data: () => ({
+  })
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .mobile_menu-wrapper {
   opacity: 0;
-  width: 90%;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 10;
+
+  width: 90%;
+  max-width: 315px;
+  height: 100vh;
+
   background: white;
   transform: translateX(-100%);
   transition: all 0.3s ease-in-out;
 }
-.mobile_menu-backlink {
-  display: flex;
-  align-items: center;
-  background: #f0f0f0;
-  padding-top: 26px;
-  padding-bottom: 26px;
-  padding-left: 20px;
-}
-.backlink-text {
-  font-family: Effra;
-  margin-left: 15px;
-  font-size: 18px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.39;
-  letter-spacing: normal;
-  color: #464646;
+
+.cross-btn {
+  position: absolute;
+  right: -46px;
+  top: 11px;
+
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-.mobile_menu-title {
-  font-family: Effra;
-  font-size: 26px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #001919;
-  border-bottom: solid 1px #d9d9d6;
-  padding-top: 26px;
-  padding-bottom: 22px;
-  padding-left: 20px;
+.cross-btn img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
+
+
 </style>
