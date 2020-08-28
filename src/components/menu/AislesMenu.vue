@@ -1,19 +1,20 @@
 <template>
-  <teamplate>
-    <a href="#" class="mobile_menu-backlink" @click.prevent="menuHandler">
-      <img src="../assets/images/arrow-red.svg" alt="arrow" />
+  <div class="mobile_menu-wrapper">
+    <a href="#" class="mobile_menu-backlink" @click.prevent="menuHandler('MainMenu')">
+      <img :src="require('@/assets/images/icons/arrow-red.svg')" alt="arrow" />
       <div class="backlink-text">Back to Main Menu</div>
     </a>
     <div class="mobile_menu-title">Browse Aisles</div>
-    <AislesMenuList :menuHandler="menuHandler"/>
-  </teamplate>
+    <AislesMenuList :menuHandler="menuHandler" :isOpenMenu="isOpenMenu"/>
+  </div>
 </template>
 
 <script>
 import AislesMenuList from "@/components/AislesMenuList";
 export default {
   props: {
-    menuHandler: Function
+    menuHandler: Function,
+    isOpenMenu: Function
   },
   name: "AislesMenu",
   components: {
@@ -23,6 +24,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.mobile_menu-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background: #ffffff;
+}
+
 .mobile_menu-backlink {
   display: flex;
   align-items: center;

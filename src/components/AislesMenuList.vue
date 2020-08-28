@@ -21,7 +21,7 @@ import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: "MobileMenuList",
   props: {
-    menuHandler: Function
+    isOpenMenu: Function
   },
 
   components: {},
@@ -43,7 +43,7 @@ export default {
       window.scrollTo(0, 0)
       this.setCurrentTopFilter(key)
       this.setCurrentFilter('all')
-      this.menuHandler()
+      this.isOpenMenu()
     },
   }
 };

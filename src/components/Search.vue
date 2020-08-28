@@ -40,6 +40,6 @@ export default {
   content: "";
   width: 16px;
   height: 16px;
-  background: url("../assets/images/Search.svg") center no-repeat;
+  background: url("../assets/images/icons/Search.svg") center no-repeat;
 }
 </style>

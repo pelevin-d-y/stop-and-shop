@@ -1,13 +1,13 @@
 <template>
   <div class="wrapper">
     <button class="minus" @click="addToCart">
-      <img src="../assets/images/btn-minus.svg" alt="minus" />
+      <img src="../assets/images/icons/btn-minus.svg" alt="minus" />
     </button>
     <div class="digit">
       {{ quantity }}  
     </div>
     <button class="plus" @click="removeFromCart">
-      <img src="../assets/images/btn-plus.svg" alt="plis" />
+      <img src="../assets/images/icons/btn-plus.svg" alt="plis" />
     </button>
   </div>
 </template>

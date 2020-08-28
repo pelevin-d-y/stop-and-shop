@@ -20,5 +20,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .list {
+    padding: 0 20px;
+  }
 
+  .item {
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    color: #63666a;
+
+    cursor: pointer;
+  }
 </style>

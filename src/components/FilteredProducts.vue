@@ -10,7 +10,7 @@
           </div>
           <div v-else class="search-subfilter" >
             {{ getSubFilter }}
-            <img src="../assets/images/cross-r.svg" class="cross" @click.stop="subfilterCrossHandler" />
+            <img src="../assets/images/icons/cross-r.svg" class="cross" @click.stop="subfilterCrossHandler" />
           </div>
         </div>
         <div class="sort">
@@ -113,7 +113,7 @@ export default {
   display: block;
   width: 16px;
   height: 16px;
-  background: url("../assets/images/Search.svg") center no-repeat;
+  background: url("../assets/images/icons/Search.svg") center no-repeat;
 }
 
 .search-subfilter {

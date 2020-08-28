@@ -83,7 +83,7 @@ export default {
   display: block;
   width: 16px;
   height: 16px;
-  background: url("../assets/images/Search.svg") center no-repeat;
+  background: url("../assets/images/icons/Search.svg") center no-repeat;
 }
 
 .close {
@@ -93,6 +93,6 @@ export default {
   margin-top: 3px;
   margin-left: 10px;
 
-  background: url("../assets/images/cross-b.svg") center no-repeat;
+  background: url("../assets/images/icons/cross-b.svg") center no-repeat;
 }
 </style>

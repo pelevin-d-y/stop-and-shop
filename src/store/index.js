@@ -12,7 +12,7 @@ export default new Vuex.Store({
     currentFilter: 'all',
     currentSubFilter: '',
     filteredProducts: [],
-    isMiniHeader: false
+    isMiniHeader: false,
   },
 
   getters: {
@@ -58,7 +58,7 @@ export default new Vuex.Store({
 
     changeIsMiniHeader(state, value) {
       state.isMiniHeader = value
-    }
+    },
   },
 
   actions: {},

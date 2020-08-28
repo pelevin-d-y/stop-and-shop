@@ -60,7 +60,7 @@ export default {
 
   width: 20px;
   height: 13px;
-  background: url('../assets/images/options.svg') no-repeat center/cover;
+  background: url('../assets/images/icons/options.svg') no-repeat center/cover;
   cursor: pointer;
 }
 

@@ -172,6 +172,6 @@ export default {
   display: block;
   width: 8px;
   height: 14px;
-  background: url("../assets/images/back-icon.svg") no-repeat center/contain;
+  background: url("../assets/images/icons/back-icon.svg") no-repeat center/contain;
 }
 </style>

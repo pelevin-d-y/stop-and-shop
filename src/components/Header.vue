@@ -6,20 +6,20 @@
       </div>
       <div class="header_wrapper">
         <a href="#" class="menu-btn" @click.prevent="menuHandler">
-          <span><img src="../assets/images/menu-button.svg" alt="cross" /></span>
+          <span><img src="../assets/images/icons/menu-button.svg" alt="cross" /></span>
         </a>
         <div class="header-logo__wrapper">
           <div v-if="isScrolled" class="header_search header_logo-search">
             <search />
           </div>
           <div v-else class="header_logo">
-            <img src="../assets/images/Logo.svg" alt="logo" />
+            <img src="../assets/images/icons/Logo.svg" alt="logo" />
           </div>
         </div>
         <div class="header_basket">
           <div class="header_basket-price">$12.97</div>
           <div class="header_basket-img">
-            <img src="../assets/images/Cart.svg" alt="basket-img" />
+            <img src="../assets/images/icons/Cart.svg" alt="basket-img" />
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import MobileMenu from "@/components/MobileMenu";
+import MobileMenu from "@/components/menu/MobileMenu";
 import Search from "@/components/Search";
 import { mapMutations } from 'vuex';
 
@@ -39,7 +39,7 @@ export default {
   name: "Header",
 
   data: () => ({
-    isOpen: false,
+    isOpen: true,
     isScrolled: false
   }),
 
@@ -70,7 +70,7 @@ export default {
     onScroll() {
       this.isScrolled = pageYOffset >= 210 ? true : false 
       this.changeIsMiniHeader(this.isScrolled)
-    }
+    },
   }
 };
 </script>
